@@ -1,0 +1,15 @@
+[Unit]
+Description=Endpruefung GUI
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/endpruefung_rpi
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/python3 /home/pi/endpruefung_rpi/ui/gui.py
+Restart=on-failure
+
+[Install]
+WantedBy=graphical.target

@@ -1,0 +1,53 @@
+{
+  "network": {
+    "mode": "lan_vnc",
+    "vnc_expected": true,
+    "ssh_enabled": true
+  },
+  "gpio": {
+    "use_mock_when_unavailable": true,
+    "inputs": {
+      "limit_top": 17,
+      "limit_bottom": 27,
+      "estop": 22,
+      "force_shunt": 23,
+      "button_up": 5,
+      "button_down": 6,
+      "speed_fast": 13
+    },
+    "outputs": {
+      "motor_up_fast": 16,
+      "motor_down_fast": 20,
+      "motor_up_slow": 21,
+      "motor_down_slow": 26,
+      "warning_lamp": 19
+    },
+    "active_low_inputs": true
+  },
+  "motion": {
+    "poll_interval_s": 0.05,
+    "slow_stop_tolerance": 1.0,
+    "auto_timeout_s": 60
+  },
+  "positions": {
+    "GS_1": 10.0,
+    "GS_2": 20.0,
+    "GS_3": 30.0,
+    "GS_4": 40.0
+  },
+  "sensors": {
+    "position_source": "mock",
+    "position_mock_start": 0.0,
+    "position_mock_step": 0.5,
+    "burster_9250": {
+      "port": "/dev/ttyUSB0",
+      "baudrate": 9600
+    },
+    "burster_7281": {
+      "enabled": false,
+      "port": "/dev/ttyUSB1",
+      "baudrate": 9600,
+      "timeout_s": 0.3
+    }
+  }
+}
