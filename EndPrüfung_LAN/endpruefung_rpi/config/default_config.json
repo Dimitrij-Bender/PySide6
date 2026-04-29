@@ -1,0 +1,59 @@
+{
+  "gpio": {
+    "mode": "BCM",
+    "use_mock_when_unavailable": true,
+    "active_low_inputs": true,
+    "inputs": {
+      "limit_top": 5,
+      "limit_bottom": 6,
+      "estop": 13,
+      "button_up": 16,
+      "button_down": 20,
+      "speed_fast": 21,
+      "force_shunt": 26
+    },
+    "outputs": {
+      "motor_up_fast": 17,
+      "motor_down_fast": 27,
+      "motor_up_slow": 22,
+      "motor_down_slow": 23,
+      "force_shunt_lamp": 24
+    }
+  },
+  "sensors": {
+    "position_source": "burster_9250_usb_ascii",
+    "burster_9250": {
+      "mode": "usb_ascii",
+      "port": "/dev/ttyACM0",
+      "baudrate": 115200,
+      "timeout_s": 0.25,
+      "poll_command": "",
+      "unit": "mm",
+      "scale": 1.0,
+      "offset": 0.0,
+      "regex": "[-+]?[0-9]+(?:[.,][0-9]+)?",
+      "fallback_to_mock": true,
+      "mock_start": 0.0,
+      "mock_step": 0.25
+    },
+    "burster_7281": {
+      "enabled": false,
+      "port": "/dev/ttyUSB0",
+      "baudrate": 9600,
+      "timeout_s": 0.3
+    }
+  },
+  "motion": {
+    "poll_interval_s": 0.05,
+    "slow_stop_tolerance": 1.0,
+    "auto_timeout_s": 60.0,
+    "hardware_button_hold_to_move": true
+  },
+  "positions": {
+    "GS_2": 35.0,
+    "GS_3": 60.0,
+    "GS_4": 85.0,
+    "GS_5": 110.0,
+    "GS_1": 565.0
+  }
+}
