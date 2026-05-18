@@ -1,2 +1,2 @@
-# Endpr-fung
-Projekt von Burster
+# PySide6
+Das ist die Übung von PySide6.
